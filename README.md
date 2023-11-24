@@ -1,6 +1,4 @@
-# Data Masking
-
-### Problem: Mask the personal information from the email 
+#  Mask the personal information in the email 
 Instead of going with state-of-the-art models(Transformers) and relying 100% on probability. <br>
 I decided to go with <b>  SPACY (Rule-based + ML-based)</b>, To decrease the chances of error. <br><br>
 
