@@ -18,8 +18,8 @@ I decided to go with <b>  SPACY (Rule-based + ML-based)</b>, To decrease the cha
 
 ## Table of Contents
 
-- [Installation & Imports](#installation)
-- [Data Loading](#dataload)
+- [Installation & Imports](#installation-&-imports)
+- [Data Loading](#data-loading)
 - [Data Creation](#data-creation)
 - [To Spacy Format](#to-spacy-format)
 - [Config File For SPACY Training](#config-file-for-spacy-training)
@@ -31,8 +31,13 @@ I decided to go with <b>  SPACY (Rule-based + ML-based)</b>, To decrease the cha
 ## Installation & Imports
 
 <ul>
-  <li>! pip install spacy</li>
   <li>import spacy</li>
+  <li>! pip install spacy</li>
+  <li>!python -m spacy download en_core_web_lg </li>
+  <li>import pandas as pd</li>
+  <li>from spacy.tokens import DocBin</li>
+  <li>import os</li>
+  <li>import random as r</li>
   <li>import re</li>
   <li>from spacy.language import Language</li>
 </ul>
@@ -152,6 +157,26 @@ saveForSpacy(emailsTest,'test')
 <ol><li>model-best</li><li>model-last</li></ol>
 
 ## Preparing Rule-Based
+
+```
+@Language.component('regex_matcher')
+def regex_matcher(doc):
+  expressions={
+      "phone": re.compile(r"[\(]*(\d{3})\s*[\)-]\s*([\d-]+)(?:\s*ext[.\s]*(\d+))?\b"),
+      "date": re.compile(r"(0[0-9]|1[0-9]|2[0-9]|3[0-1])[/](0[0-9]|1[0-2])[/]([1-2][0-9][0-9][0-9])"),
+      "email": re.compile(r"\S+@\S+")                
+  }
+  spans=[]
+  for label, expression in expressions.items():
+      for match in re.finditer(expression, doc.text):
+          start, end = match.span()
+          entity = doc.char_span(start, end, label=label)
+          if entity:
+            spans.append(entity)
+
+  doc.ents=list(doc.ents)+spacy.util.filter_spans(spans)
+  return doc
+```
 
 ## Loading The Model
 You can load any model.
