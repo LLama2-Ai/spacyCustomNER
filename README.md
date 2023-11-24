@@ -21,12 +21,14 @@ I decided to go with <b>  SPACY (Rule-based + ML-based)</b>, To decrease the cha
 - [Installation & Imports](#installation)
 - [Data Loading](#dataload)
 - [Data Creation](#data)
-- [Training](#training)
-- [Preparing Rule-Based](#training)
-- [Loading the model](#rulebased)
+- [To Spacy Format](#spacyf)
+- [Config File For SPACY Training](#spacyt)
+- [Training the ML](#training)
+- [Preparing Rule-Based](#rulebased)
+- [Loading the model](#usage)
 - [Results](#Results)
 
-## Installation
+## Installation & Imports
 
 <ul>
   <li>! pip install spacy</li>
@@ -36,7 +38,7 @@ I decided to go with <b>  SPACY (Rule-based + ML-based)</b>, To decrease the cha
 </ul>
 
 
-## dataload
+## Data Loading
 <p> 
 Bellow code will read all the text files listed in the names directory. And creates a data frame of names exist in different languages </p>
 
@@ -114,7 +116,7 @@ emailsTest=prepareData(fullDs,email_templates_test,0,1,500)
 print(len(emailsTrain),len(emailsTest))
 ```
 
-## Raw Data to .Spacy Format
+## To Spacy Format
 
 ``` 
 def saveForSpacy(emails,fileName):
@@ -138,18 +140,18 @@ def saveForSpacy(emails,fileName):
 saveForSpacy(emailsTrain,'train')
 saveForSpacy(emailsTest,'test')
 ```
-## Config 
+## Config File For SPACY Training 
 ```
 ! python -m spacy init config config.cfg --lang en --pipeline ner --optimize accuracy 
 ```
-## Traning
+## Training the ML
 ```
 ! python -m spacy train config.cfg --output ./ --paths.train ./train.spacy --paths.dev ./test.spacy
 ```
 <p> After training two files will be generated </p>
 <ol><li>model-best</li><li>model-last</li></ol>
 
-## Rule based 
+## Preparing Rule-Based
 
 ## ModelLoading
 You can load any model.
