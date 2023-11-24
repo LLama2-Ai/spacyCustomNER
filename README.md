@@ -25,7 +25,7 @@ I decided to go with <b>  SPACY (Rule-based + ML-based)</b>, To decrease the cha
 - [Config File For SPACY Training](#config-file-for-spacy-training)
 - [Training the SPACY](#training-the-spacy)
 - [Preparing Rule-Based](#preparing-rule-based)
-- [Loading the model](#loading-the-model)
+- [Finalizing the pipeline](#finalizing-the-pipeline)
 - [Results](#results)
 
 ## Installation & Imports
@@ -178,7 +178,25 @@ def regex_matcher(doc):
   return doc
 ```
 
-## Loading The Model
+## Finalizing the pipeline
 You can load any model.
-``` nlp=spacy.load('model-last') ```
+```
+text='Any text for validation'
+
+nlp = spacy.load('en_core_web_lg')
+nlp.add_pipe('regex_matcher',before='ner')
+doc = nlp(text)
+
+for ent in doc.ents:
+    if (ent.label_=='phone') | (ent.label_=='email') | (ent.label_=='DATE'):
+         text=text.replace(ent.text,'[External]'))
+
+namesSpcy=spacy.load(r'yourPathToModel\model-best')
+doc=namesSpcy(text)
+for ent in doc.ents:
+    text=text.replace(ent.text,'[External]')
+
+print(text)
+ ```
 ## Results
+![image](https://github.com/LLama2-Ai/spacyCustomNER/assets/142317270/b1f07ee9-2ef7-4f0a-8015-7ba6141e3d5e)
