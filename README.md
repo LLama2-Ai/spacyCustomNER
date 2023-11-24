@@ -20,13 +20,13 @@ I decided to go with <b>  SPACY (Rule-based + ML-based)</b>, To decrease the cha
 
 - [Installation & Imports](#installation)
 - [Data Loading](#dataload)
-- [Data Creation](#data)
-- [To Spacy Format](#spacyf)
-- [Config File For SPACY Training](#spacyt)
-- [Training the ML](#training)
-- [Preparing Rule-Based](#rulebased)
-- [Loading the model](#usage)
-- [Results](#Results)
+- [Data Creation](#data-creation)
+- [To Spacy Format](#to-spacy-format)
+- [Config File For SPACY Training](#config-file-for-spacy-training)
+- [Training the SPACY](#training-the-spacy)
+- [Preparing Rule-Based](#preparing-rule-based)
+- [Loading the model](#loading-the-model)
+- [Results](#results)
 
 ## Installation & Imports
 
@@ -144,7 +144,7 @@ saveForSpacy(emailsTest,'test')
 ```
 ! python -m spacy init config config.cfg --lang en --pipeline ner --optimize accuracy 
 ```
-## Training the ML
+## Training the SPACY
 ```
 ! python -m spacy train config.cfg --output ./ --paths.train ./train.spacy --paths.dev ./test.spacy
 ```
@@ -153,7 +153,7 @@ saveForSpacy(emailsTest,'test')
 
 ## Preparing Rule-Based
 
-## ModelLoading
+## Loading The Model
 You can load any model.
 ``` nlp=spacy.load('model-last') ```
 ## Results
