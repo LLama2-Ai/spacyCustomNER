@@ -19,7 +19,7 @@ I decided to go with <b>  SPACY (Rule-based + ML-based)</b>, To decrease the cha
 ## Table of Contents
 
 - [Installation & Imports](#installation)
-- [Data Loading](#usage)
+- [Data Loading](#dataload)
 - [Data Creation](#data)
 - [Training](#training)
 - [Preparing Rule-Based](#training)
@@ -36,7 +36,7 @@ I decided to go with <b>  SPACY (Rule-based + ML-based)</b>, To decrease the cha
 </ul>
 
 
-## Data Load
+## dataload
 <p> 
 Bellow code will read all the text files listed in the names directory. And creates a data frame of names exist in different languages </p>
 
