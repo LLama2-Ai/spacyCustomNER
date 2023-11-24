@@ -199,4 +199,9 @@ for ent in doc.ents:
 print(text)
  ```
 ## Results
+
+<p>
+  You! might see some issues below where the model is not able to capture the names correctly, That's because of the data I feed to the model. As per the organization's privacy, i cannot share the data but if you feed more appropriate data to the model the result will improve.
+</p>
+
 ![image](https://github.com/LLama2-Ai/spacyCustomNER/assets/142317270/b1f07ee9-2ef7-4f0a-8015-7ba6141e3d5e)
