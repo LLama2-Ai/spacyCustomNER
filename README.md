@@ -2,11 +2,11 @@
 
 ### Problem: Mask the personal information from the email 
 Instead of going with state-of-the-art models(Transformers) and relying 100% on probability. <br>
-I decided to go with <b> 🧯 SPACY (rule-based + ML-based)</b>, To decrease the chances of error. <br><br>
+I decided to go with <b>  SPACY (Rule-based + ML-based)</b>, To decrease the chances of error. <br><br>
 
 <I> 💙 And wanted to share the base version of my code with you guys</i>.
 
-#### And got inspiring results even on the first try. 
+#### End Result🎄
 
 ![image](https://github.com/LLama2-Ai/spacyCustomNER/assets/142317270/587d58f7-ac4b-40fe-9167-6c2db7375cc7)
 
