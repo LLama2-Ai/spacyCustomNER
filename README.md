@@ -18,21 +18,35 @@ I decided to go with <b>  SPACY (Rule-based + ML-based)</b>, To decrease the cha
 
 ## Table of Contents
 
-- [Installation](#installation)
+- [Installation & Imports](#installation)
 - [Usage](#usage)
-- [Data](#data)
+- [Data Creation](#data)
 - [Training](#training)
+- [Loading the model](#modelLoading)
 - [Results](#Results)
 
 ## Installation
 
-List the steps required to install your project. Include any dependencies or prerequisites.
+<ul>
+  <li>! pip install spacy</li>
+  <li>import spacy</li>
+  <li>import re</li>
+  <li>from spacy.language import Language</li>
+</ul>
 
 
 ## Usage
+<p> 
+Bellow code can be used to generate custom data for training incase you have some templates and a list of some values you want to replace in the template.
+like in my case <br>
+![image](https://github.com/LLama2-Ai/spacyCustomNER/assets/142317270/749bbd13-a0ea-44b4-8e50-c0be2ce8be89)<br>
+the <b>name</b> word will be replaced with the names provided in the names.zip file.  
+</p>
 
 ## Data
 
 ## Traning
+
+## ModelLoading
 
 ## Results
